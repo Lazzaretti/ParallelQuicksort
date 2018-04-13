@@ -13,7 +13,9 @@ namespace parallelQuicksort
             {
                 var array = GetRandomArray(N);
                 Measure("Sequential\t", () => SequentialQuickSort.Sort(array));
+                array = GetRandomArray(N);
                 Measure("Parallel\t", () => ParallelQuickSort.Sort(array));
+                array = GetRandomArray(N);
                 Measure("P. Separate Method", () => ParallelSeparateMethodQuickSort.Sort(array));
             }
         }
